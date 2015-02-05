@@ -19,15 +19,19 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="My Movie Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a8S-6x-nnA">
-                                            <rect key="frame" x="49" y="9" width="238" height="21"/>
+                                            <rect key="frame" x="20" y="14" width="381" height="48"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="etA-yT-sfS">
+                                            <rect key="frame" x="484" y="4" width="74" height="67"/>
+                                        </imageView>
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="MovieTitleLabel" destination="a8S-6x-nnA" id="i8h-aW-6zp"/>
+                                    <outlet property="movieImage" destination="etA-yT-sfS" id="POu-KS-w1H"/>
                                     <segue destination="Sxw-A1-ycP" kind="show" id="WX1-rQ-Dnj"/>
                                 </connections>
                             </tableViewCell>
@@ -41,7 +45,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ggp-fv-Hdl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1000" y="769"/>
+            <point key="canvasLocation" x="1000" y="765"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="B9E-cn-ZRt">
