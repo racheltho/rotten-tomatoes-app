@@ -41,17 +41,9 @@ class ViewController: UITableViewController {
         cell.movieTitleLabel.text = movie["title"] as NSString
         var posters_dict = movie["posters"] as NSDictionary
         var thumbnail = posters_dict["thumbnail"] as NSString
-        
-        let imagerequest = NSMutableURLRequest(URL: NSURL(string:thumbnail)!)
-        
-        NSURLConnection.sendAsynchronousRequest(imagerequest, queue: NSOperationQueue.mainQueue(), completionHandler: { (response, data, error) in
-            var errorValue: NSError? = nil
-            println(data)
-            cell.movieImage.image = UIImage(data: data)
-            
-        })
-        
-        
+//        var high_res = thumbnail.stringByReplacingOccurrencesOfString("tmb", withString: "ori")
+        println(thumbnail)
+        cell.movieImage.setImageWithURL(NSURL(string: thumbnail))
         return cell
     }
 
@@ -59,7 +51,9 @@ class ViewController: UITableViewController {
         let details = MovieDetailsViewController()
         let movie = self.moviesArray![indexPath.row] as NSDictionary
         details.movieDictionary = movie
-        self.navigationController?.pushViewController(details, animated: true)
+        println(details.movieDictionary)
+        details.performSegueWithIdentifier("detailsSegue", sender: self)
+//        self.navigationController?.pushViewController(details, animated: true)
     }
 }
 
