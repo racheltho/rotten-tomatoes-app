@@ -41,8 +41,8 @@ class ViewController: UITableViewController {
         cell.movieTitleLabel.text = movie["title"] as NSString
         var posters_dict = movie["posters"] as NSDictionary
         var thumbnail = posters_dict["thumbnail"] as NSString
-//        var high_res = thumbnail.stringByReplacingOccurrencesOfString("tmb", withString: "ori")
         println(thumbnail)
+        //var high_res = thumbnail.stringByReplacingOccurrencesOfString("tmb", withString: "ori")
         cell.movieImage.setImageWithURL(NSURL(string: thumbnail))
         return cell
     }
