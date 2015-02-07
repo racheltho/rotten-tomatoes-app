@@ -46,14 +46,17 @@ class ViewController: UITableViewController {
         cell.movieImage.setImageWithURL(NSURL(string: thumbnail))
         return cell
     }
-
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        let details = MovieDetailsViewController()
-        let movie = self.moviesArray![indexPath.row] as NSDictionary
-        details.movieDictionary = movie
-        println(details.movieDictionary)
-        details.performSegueWithIdentifier("detailsSegue", sender: self)
-//        self.navigationController?.pushViewController(details, animated: true)
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "detailsSegue" {
+            let cell = sender as MovieTableViewCell
+            if let indexPath = tableView.indexPathForCell(cell) {
+                let detailsController = segue.destinationViewController as MovieDetailsViewController
+                detailsController.movieDictionary = self.moviesArray![indexPath.row] as? NSDictionary
+                tableView.deselectRowAtIndexPath(indexPath, animated: true)
+            }
+        }
     }
+    
 }
 

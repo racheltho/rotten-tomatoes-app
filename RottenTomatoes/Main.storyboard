@@ -2,18 +2,19 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="B7m-mv-5a2">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="3gE-zX-sRt">
             <objects>
                 <tableViewController id="M44-1h-Ouh" customClass="ViewController" customModule="RottenTomatoes" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="165" sectionHeaderHeight="22" sectionFooterHeight="22" id="b3n-GD-hVX">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="134" sectionHeaderHeight="22" sectionFooterHeight="22" id="b3n-GD-hVX">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="moviecell" rowHeight="165" id="0oO-9A-je5" customClass="MovieTableViewCell" customModule="RottenTomatoes" customModuleProvider="target">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="moviecell" rowHeight="134" id="0oO-9A-je5" customClass="MovieTableViewCell" customModule="RottenTomatoes" customModuleProvider="target">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="0oO-9A-je5" id="UGA-6c-ext">
                                     <autoresizingMask key="autoresizingMask"/>
@@ -32,7 +33,7 @@
                                 <connections>
                                     <outlet property="MovieTitleLabel" destination="QuF-fL-Hxw" id="Yd8-ul-iPL"/>
                                     <outlet property="movieImage" destination="zZe-tw-oDp" id="TPb-OO-ZXI"/>
-                                    <segue destination="HFa-0L-bO7" kind="show" identifier="detailsSegue" id="ics-Zv-diF"/>
+                                    <segue destination="HFa-0L-bO7" kind="show" identifier="detailsSegue" id="wp3-aC-tTz"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -59,23 +60,63 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Movie Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xZX-2U-dT3">
-                                <rect key="frame" x="279" y="110" width="84" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Paragraph" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xmg-KK-ygX">
+                                <rect key="frame" x="130" y="154" width="341" height="119"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.99244397095959591" green="0.99244397095959591" blue="0.99244397095959591" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
+                                <variation key="widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="30" y="137" width="341" height="119"/>
+                                </variation>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Paragraph" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xmg-KK-ygX">
-                                <rect key="frame" x="98" y="154" width="341" height="119"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EPf-zk-qoQ">
-                                <rect key="frame" x="199" y="295" width="240" height="225"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EPf-zk-qoQ">
+                                <rect key="frame" x="180" y="340" width="240" height="225"/>
+                                <variation key="widthClass=compact" ambiguous="YES" misplaced="YES">
+                                    <rect key="frame" x="79" y="286" width="241" height="278"/>
+                                </variation>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Movie Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xZX-2U-dT3">
+                                <rect key="frame" x="258" y="110" width="84" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="98" y="97" width="203" height="21"/>
+                                </variation>
+                            </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="5EP-gB-d6X" firstAttribute="top" secondItem="EPf-zk-qoQ" secondAttribute="bottom" constant="36" id="5Oc-jh-WHs"/>
+                            <constraint firstItem="xmg-KK-ygX" firstAttribute="top" secondItem="xZX-2U-dT3" secondAttribute="bottom" constant="21" id="WIX-Zo-c67"/>
+                            <constraint firstItem="EPf-zk-qoQ" firstAttribute="top" secondItem="xmg-KK-ygX" secondAttribute="bottom" constant="30" id="Wys-V6-YkA"/>
+                            <constraint firstAttribute="centerX" secondItem="EPf-zk-qoQ" secondAttribute="centerX" id="aRl-ll-as8"/>
+                            <constraint firstItem="xZX-2U-dT3" firstAttribute="top" secondItem="MJR-iu-YIV" secondAttribute="bottom" constant="31" id="bHD-5C-Ol4"/>
+                            <constraint firstItem="xmg-KK-ygX" firstAttribute="leading" secondItem="LPw-yi-7Nv" secondAttribute="leadingMargin" constant="14" id="gGY-nh-Xht"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="xmg-KK-ygX" secondAttribute="trailing" constant="14" id="hs4-RR-z2R"/>
+                            <constraint firstAttribute="centerX" secondItem="xmg-KK-ygX" secondAttribute="centerX" id="oxv-1b-ceX"/>
+                            <constraint firstAttribute="centerX" secondItem="xZX-2U-dT3" secondAttribute="centerX" id="pi5-E6-KGU"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="WIX-Zo-c67"/>
+                                <exclude reference="gGY-nh-Xht"/>
+                                <exclude reference="hs4-RR-z2R"/>
+                                <exclude reference="bHD-5C-Ol4"/>
+                                <exclude reference="Wys-V6-YkA"/>
+                                <exclude reference="5Oc-jh-WHs"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="constraints">
+                                <include reference="WIX-Zo-c67"/>
+                                <include reference="gGY-nh-Xht"/>
+                                <include reference="hs4-RR-z2R"/>
+                                <include reference="bHD-5C-Ol4"/>
+                                <include reference="Wys-V6-YkA"/>
+                                <include reference="5Oc-jh-WHs"/>
+                            </mask>
+                        </variation>
                     </view>
                     <connections>
                         <outlet property="MovieDescription" destination="xmg-KK-ygX" id="QN5-Kd-PjU"/>
