@@ -9,22 +9,43 @@
 import UIKit
 
 class ViewController: UITableViewController {
-
+    
+    var pullRefreshControl: UIRefreshControl!
     var moviesArray: NSArray!
     
-    override func viewDidAppear(animated: Bool) {
-        super.viewDidAppear(animated)
-        
+    @IBOutlet weak var errorView: UIView!
+    
+    
+    func makeRottenTomatoesRequest(){
         let RottenTomatoesURLString = "http://api.rottentomatoes.com/api/public/v1.0/lists/dvds/top_rentals.json?apikey=9ecrem4ahjdfjncrzxrqy9qj"
         let request = NSMutableURLRequest(URL: NSURL(string:RottenTomatoesURLString)!)
         
         NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue(), completionHandler: { (response, data, error) in
-            var errorValue: NSError? = nil
-            let dictionary = NSJSONSerialization.JSONObjectWithData(data, options: nil, error: &errorValue) as NSDictionary
-            self.moviesArray = dictionary["movies"] as NSArray
-            self.tableView.reloadData()
+            if (error != nil) {
+                println(error)
+                self.errorView.hidden = false
+            } else {
+                var errorValue: NSError? = nil
+                println("request returned")
+                let dictionary = NSJSONSerialization.JSONObjectWithData(data, options: nil, error: &errorValue) as NSDictionary
+                self.moviesArray = dictionary["movies"] as NSArray
+                self.tableView.reloadData()
+            }
         })
         
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        makeRottenTomatoesRequest()
+        pullRefreshControl = UIRefreshControl()
+        pullRefreshControl.addTarget(self, action: "onRefresh", forControlEvents: UIControlEvents.ValueChanged)
+        tableView.insertSubview(pullRefreshControl, atIndex: 0)
+    }
+    
+    func onRefresh() {
+        makeRottenTomatoesRequest()
+        self.pullRefreshControl.endRefreshing()
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection: Int) -> Int {
@@ -41,7 +62,6 @@ class ViewController: UITableViewController {
         cell.movieTitleLabel.text = movie["title"] as NSString
         var posters_dict = movie["posters"] as NSDictionary
         var thumbnail = posters_dict["thumbnail"] as NSString
-        println(thumbnail)
         //var high_res = thumbnail.stringByReplacingOccurrencesOfString("tmb", withString: "ori")
         cell.movieImage.setImageWithURL(NSURL(string: thumbnail))
         return cell
