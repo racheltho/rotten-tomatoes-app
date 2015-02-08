@@ -110,7 +110,7 @@
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EPf-zk-qoQ">
                                 <rect key="frame" x="180" y="340" width="240" height="225"/>
-                                <variation key="widthClass=compact" ambiguous="YES" misplaced="YES">
+                                <variation key="widthClass=compact" misplaced="YES">
                                     <rect key="frame" x="-5" y="72" width="405" height="520"/>
                                 </variation>
                             </imageView>
@@ -174,7 +174,7 @@
                                     <mask key="constraints">
                                         <include reference="5QU-dj-l52"/>
                                         <include reference="8l9-ZZ-e9X"/>
-                                        <include reference="C65-Mr-Ecx"/>
+                                        <exclude reference="C65-Mr-Ecx"/>
                                         <include reference="Xlq-ez-9VH"/>
                                         <include reference="yfH-LZ-cJH"/>
                                         <include reference="1bW-8K-MXL"/>
@@ -188,6 +188,9 @@
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="fd3-Ph-YhS" secondAttribute="trailing" id="3py-4R-g6n"/>
+                            <constraint firstAttribute="trailing" secondItem="EPf-zk-qoQ" secondAttribute="trailing" id="E42-rk-SDq"/>
+                            <constraint firstItem="EPf-zk-qoQ" firstAttribute="leading" secondItem="LPw-yi-7Nv" secondAttribute="leadingMargin" constant="-21" id="Ihv-TO-iua"/>
+                            <constraint firstItem="5EP-gB-d6X" firstAttribute="top" secondItem="EPf-zk-qoQ" secondAttribute="bottom" constant="8" symbolic="YES" id="Lgs-SY-EFR"/>
                             <constraint firstItem="5EP-gB-d6X" firstAttribute="top" secondItem="fd3-Ph-YhS" secondAttribute="bottom" id="Oc6-Gb-EQ1"/>
                             <constraint firstItem="fd3-Ph-YhS" firstAttribute="leading" secondItem="LPw-yi-7Nv" secondAttribute="leadingMargin" id="SeF-bp-8R8"/>
                             <constraint firstItem="EPf-zk-qoQ" firstAttribute="top" secondItem="MJR-iu-YIV" secondAttribute="bottom" id="Ya1-fa-QbY"/>
@@ -198,9 +201,12 @@
                                 <exclude reference="fd3-Ph-YhS"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="E42-rk-SDq"/>
+                                <exclude reference="Ihv-TO-iua"/>
                                 <exclude reference="Ya1-fa-QbY"/>
                                 <exclude reference="3py-4R-g6n"/>
                                 <exclude reference="SeF-bp-8R8"/>
+                                <exclude reference="Lgs-SY-EFR"/>
                                 <exclude reference="Oc6-Gb-EQ1"/>
                                 <exclude reference="x7x-Fn-mR9"/>
                             </mask>
@@ -210,9 +216,12 @@
                                 <include reference="fd3-Ph-YhS"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="E42-rk-SDq"/>
+                                <include reference="Ihv-TO-iua"/>
                                 <include reference="Ya1-fa-QbY"/>
                                 <include reference="3py-4R-g6n"/>
                                 <include reference="SeF-bp-8R8"/>
+                                <include reference="Lgs-SY-EFR"/>
                                 <include reference="Oc6-Gb-EQ1"/>
                                 <include reference="x7x-Fn-mR9"/>
                             </mask>
